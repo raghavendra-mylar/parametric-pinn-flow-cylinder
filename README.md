@@ -30,4 +30,4 @@ Python · TensorFlow/Keras · NumPy · Matplotlib · GPU Computing (NVIDIA T4)
 Raghavendra M  
 M.Tech Aerospace Engineering (Thermal & Propulsion) @ IIST  
  ragharit586@gmail.com  
-[LinkedIn](www.linkedin.com/in/raghavendram-aero)
+[LinkedIn](https://www.linkedin.com/in/raghavendra-mylar-b00b95240/)
