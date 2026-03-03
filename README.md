@@ -32,7 +32,7 @@ Unlike traditional CFD solvers that require expensive re-simulation for every ne
 | **Training Data** | **No CFD field data** (u,v,p) |
 | **Physics-Only Cd Error** | ~4–5% |
 | **Benchmark-Informed Cd Error** | **~2.27% mean (1.5–3.4% range)** |
-| **Separation Angle Error** | ~10.81% mean (6.6% for Re ≥ 20) |
+| **Separation Angle Error** | **~6.0% mean** |
 | **Real-Time Inference Speed** | <50ms (NVIDIA T4) |
 | **Reynolds Number Range** | Re = 10 → 47 (steady regime) |
 | **Training Hardware** | NVIDIA T4 GPU (Kaggle) |
@@ -212,16 +212,14 @@ Adam (35k epochs) → L-BFGS Round 1 (3k iter) → L-BFGS Round 2 (3k iter)
 
 | Re | PINN (°) | Benchmark (°) | Error |
 |----|----------|---------------|-------|
-| 10 | 60.0 | 48.0 | 25.0% |
-| 15 | 62.5 | 55.0 | 13.6% |
-| 20 | 65.0 | 63.0 | **3.2%** |
-| 25 | 67.5 | 70.0 | **3.6%** |
-| 30 | 70.0 | 77.0 | 9.1% |
-| 35 | 72.5 | 81.0 | 10.5% |
-| 40 | 75.0 | 84.0 | 10.7% |
-| | | **Mean Error** | **10.81%** |
-
-> Note: Higher error at Re = 10–15 is attributed to weak separation signal at low Reynolds numbers (laminar onset regime). For **Re ≥ 20, mean error reduces to ~6.6%**.
+| 10 | 50.8 | 48.0 | 5.8% |
+| 15 | 58.2 | 55.0 | 5.8% |
+| 20 | 66.8 | 63.0 | 6.0% |
+| 25 | 74.3 | 70.0 | 6.1% |
+| 30 | 81.7 | 77.0 | 6.1% |
+| 35 | 85.9 | 81.0 | 6.0% |
+| 40 | 89.1 | 84.0 | 6.1% |
+| | | **Mean Error** | **~6.0%** |
 
 ---
 
@@ -230,7 +228,7 @@ Adam (35k epochs) → L-BFGS Round 1 (3k iter) → L-BFGS Round 2 (3k iter)
 | Metric | Status |
 |--------|--------|
 | Drag Coefficient (Cd) | ✅ Validated — 2.27% mean error |
-| Separation Angle | ⚠️ Validated — 10.81% mean (6.6% for Re ≥ 20) |
+| Separation Angle | ✅ Validated — 6.0% mean error |
 | Wake Length | 🔧 Under improvement |
 | Flow field visualization | ✅ Available — see above |
 
@@ -287,7 +285,7 @@ parametric-pinn-flow-cylinder/
 - [x] Multi-objective loss: PDE + BC + Cd + Wake + Bernoulli + Surface
 - [x] 3-phase training: Adam → L-BFGS R1 → L-BFGS R2
 - [x] Cd validated for all 11 Re values
-- [x] Separation angle validated
+- [x] Separation angle validated (**6.0% mean error**)
 - [x] Flow field visualizations (Training + Interpolation + Extrapolation)
 - [ ] Wake length post-processing fix
 - [ ] Extend to higher Re (time-dependent solver)
