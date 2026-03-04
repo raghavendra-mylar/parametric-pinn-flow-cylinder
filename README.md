@@ -323,7 +323,7 @@ Steady-state laminar flow (Re < 47): no time dependence, 2D incompressible, no t
 **Raghavendra M**  
 M.Tech Aerospace Engineering (Thermal & Propulsion) @ IIST  
 📧 ragharit586@gmail.com  
-🔗 [LinkedIn](www.linkedin.com/in/raghavendra-mylar-b00b95240)  
+🔗 [LinkedIn](https://www.linkedin.com/in/raghavendra-mylar-b00b95240/)  
 🐙 [GitHub](https://github.com/ragharit586-pixel)
 
 ---
